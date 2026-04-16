@@ -1,248 +1,63 @@
 {
-    "session_date": "2026-04-15",
-    "start_time": "22:34:22",
-    "end_time": "22:38:43",
-    "total_duration_seconds": 260.86,
+    "session_date": "2026-04-16",
+    "start_time": "16:21:45",
+    "end_time": "16:22:34",
+    "total_duration_seconds": 48.46,
     "data_log": [
         {
-            "timestamp_sec": 5.94,
-            "focus_status": "Distracted",
-            "heart_rate_bpm": 86
-        },
-        {
-            "timestamp_sec": 11.08,
+            "timestamp_sec": 5.12,
             "focus_status": "Focused",
-            "heart_rate_bpm": 97
-        },
-        {
-            "timestamp_sec": 18.06,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 89
-        },
-        {
-            "timestamp_sec": 22.8,
-            "focus_status": "Blinking",
             "heart_rate_bpm": 83
         },
         {
-            "timestamp_sec": 27.75,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 76
-        },
-        {
-            "timestamp_sec": 33.14,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 79
-        },
-        {
-            "timestamp_sec": 38.63,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 84
-        },
-        {
-            "timestamp_sec": 44.0,
-            "focus_status": "Analyzing...",
-            "heart_rate_bpm": 80
-        },
-        {
-            "timestamp_sec": 49.22,
+            "timestamp_sec": 9.39,
             "focus_status": "Focused",
             "heart_rate_bpm": 80
         },
         {
-            "timestamp_sec": 54.42,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 62
-        },
-        {
-            "timestamp_sec": 59.31,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 60
-        },
-        {
-            "timestamp_sec": 64.47,
+            "timestamp_sec": 13.62,
             "focus_status": "Focused",
             "heart_rate_bpm": 71
         },
         {
-            "timestamp_sec": 70.02,
-            "focus_status": "Analyzing...",
-            "heart_rate_bpm": 70
-        },
-        {
-            "timestamp_sec": 74.77,
+            "timestamp_sec": 17.92,
             "focus_status": "Focused",
-            "heart_rate_bpm": 61
+            "heart_rate_bpm": 73
         },
         {
-            "timestamp_sec": 80.24,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 70
-        },
-        {
-            "timestamp_sec": 85.68,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 64
-        },
-        {
-            "timestamp_sec": 91.12,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 68
-        },
-        {
-            "timestamp_sec": 96.62,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 66
-        },
-        {
-            "timestamp_sec": 102.52,
-            "focus_status": "Analyzing...",
-            "heart_rate_bpm": 68
-        },
-        {
-            "timestamp_sec": 107.9,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 67
-        },
-        {
-            "timestamp_sec": 113.27,
+            "timestamp_sec": 22.33,
             "focus_status": "Distracted",
-            "heart_rate_bpm": 66
-        },
-        {
-            "timestamp_sec": 118.74,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 64
-        },
-        {
-            "timestamp_sec": 124.82,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 60
-        },
-        {
-            "timestamp_sec": 131.2,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 61
-        },
-        {
-            "timestamp_sec": 136.68,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 62
-        },
-        {
-            "timestamp_sec": 141.99,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 66
-        },
-        {
-            "timestamp_sec": 149.46,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 71
-        },
-        {
-            "timestamp_sec": 155.08,
-            "focus_status": "Distracted",
-            "heart_rate_bpm": 64
-        },
-        {
-            "timestamp_sec": 160.72,
-            "focus_status": "Focused",
             "heart_rate_bpm": 65
         },
         {
-            "timestamp_sec": 165.99,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 64
+            "timestamp_sec": 26.53,
+            "focus_status": "Distracted",
+            "heart_rate_bpm": 72
         },
         {
-            "timestamp_sec": 171.16,
+            "timestamp_sec": 30.73,
             "focus_status": "Focused",
-            "heart_rate_bpm": 64
+            "heart_rate_bpm": 72
         },
         {
-            "timestamp_sec": 176.33,
+            "timestamp_sec": 34.9,
             "focus_status": "Focused",
+            "heart_rate_bpm": 70
+        },
+        {
+            "timestamp_sec": 39.17,
+            "focus_status": "Deep",
             "heart_rate_bpm": 61
         },
         {
-            "timestamp_sec": 181.67,
-            "focus_status": "Distracted",
+            "timestamp_sec": 43.44,
+            "focus_status": "Focused",
             "heart_rate_bpm": 60
         },
         {
-            "timestamp_sec": 187.19,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 63
-        },
-        {
-            "timestamp_sec": 192.51,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 77
-        },
-        {
-            "timestamp_sec": 197.96,
+            "timestamp_sec": 47.78,
             "focus_status": "Focused",
-            "heart_rate_bpm": 84
-        },
-        {
-            "timestamp_sec": 203.11,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 90
-        },
-        {
-            "timestamp_sec": 207.9,
-            "focus_status": "Analyzing...",
-            "heart_rate_bpm": 95
-        },
-        {
-            "timestamp_sec": 212.9,
-            "focus_status": "Blinking",
-            "heart_rate_bpm": 88
-        },
-        {
-            "timestamp_sec": 217.91,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 89
-        },
-        {
-            "timestamp_sec": 223.78,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 98
-        },
-        {
-            "timestamp_sec": 229.19,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 100
-        },
-        {
-            "timestamp_sec": 234.66,
-            "focus_status": "Distracted",
-            "heart_rate_bpm": 93
-        },
-        {
-            "timestamp_sec": 239.8,
-            "focus_status": "Distracted",
-            "heart_rate_bpm": 95
-        },
-        {
-            "timestamp_sec": 244.78,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 87
-        },
-        {
-            "timestamp_sec": 250.61,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 81
-        },
-        {
-            "timestamp_sec": 255.77,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 85
-        },
-        {
-            "timestamp_sec": 260.75,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 95
+            "heart_rate_bpm": 62
         }
     ]
 }
