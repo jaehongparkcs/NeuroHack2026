@@ -1,63 +1,99 @@
 {
     "session_date": "2026-04-16",
-    "start_time": "16:21:45",
-    "end_time": "16:22:34",
-    "total_duration_seconds": 48.46,
+    "start_time": "18:16:09",
     "data_log": [
         {
-            "timestamp_sec": 5.12,
+            "timestamp_sec": 6.03,
             "focus_status": "Focused",
-            "heart_rate_bpm": 83
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.51,
+            "background_audio": "Eroya (Noise) - Lunarei"
         },
         {
-            "timestamp_sec": 9.39,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 80
-        },
-        {
-            "timestamp_sec": 13.62,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 71
-        },
-        {
-            "timestamp_sec": 17.92,
-            "focus_status": "Focused",
-            "heart_rate_bpm": 73
-        },
-        {
-            "timestamp_sec": 22.33,
+            "timestamp_sec": 11.43,
             "focus_status": "Distracted",
-            "heart_rate_bpm": 65
+            "heart_rate_bpm": 85,
+            "eeg_alpha": 0.4,
+            "background_audio": "Eroya (Noise) - Lunarei"
         },
         {
-            "timestamp_sec": 26.53,
+            "timestamp_sec": 17.91,
+            "focus_status": "Focused",
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.57,
+            "background_audio": "Eroya (Noise) - Lunarei"
+        },
+        {
+            "timestamp_sec": 23.38,
+            "focus_status": "Focused",
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.56,
+            "background_audio": "Eroya (Noise) - Lunarei"
+        },
+        {
+            "timestamp_sec": 28.89,
+            "focus_status": "Focused",
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.55,
+            "background_audio": "Eroya (Noise) - Lunarei"
+        },
+        {
+            "timestamp_sec": 33.77,
+            "focus_status": "Focused",
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.57,
+            "background_audio": "Eroya (Noise) - Lunarei"
+        },
+        {
+            "timestamp_sec": 38.67,
+            "focus_status": "Focused",
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.6,
+            "background_audio": "Eroya (Noise) - Lunarei"
+        },
+        {
+            "timestamp_sec": 44.35,
             "focus_status": "Distracted",
-            "heart_rate_bpm": 72
+            "heart_rate_bpm": 82,
+            "eeg_alpha": 0.32,
+            "background_audio": "Eroya (Noise) - Lunarei"
         },
         {
-            "timestamp_sec": 30.73,
+            "timestamp_sec": 50.1,
             "focus_status": "Focused",
-            "heart_rate_bpm": 72
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.55,
+            "background_audio": "Aenara (Noise) - Leil\u1ea1ni"
         },
         {
-            "timestamp_sec": 34.9,
+            "timestamp_sec": 55.65,
             "focus_status": "Focused",
-            "heart_rate_bpm": 70
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.53,
+            "background_audio": "Aenara (Noise) - Leil\u1ea1ni"
         },
         {
-            "timestamp_sec": 39.17,
-            "focus_status": "Deep",
-            "heart_rate_bpm": 61
-        },
-        {
-            "timestamp_sec": 43.44,
+            "timestamp_sec": 61.3,
             "focus_status": "Focused",
-            "heart_rate_bpm": 60
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.5,
+            "background_audio": "Aenara (Noise) - Leil\u1ea1ni"
         },
         {
-            "timestamp_sec": 47.78,
+            "timestamp_sec": 68.29,
             "focus_status": "Focused",
-            "heart_rate_bpm": 62
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.56,
+            "background_audio": "Aenara (Noise) - Leil\u1ea1ni"
+        },
+        {
+            "timestamp_sec": 74.17,
+            "focus_status": "Focused",
+            "heart_rate_bpm": 72,
+            "eeg_alpha": 0.56,
+            "background_audio": "Aenara (Noise) - Leil\u1ea1ni"
         }
-    ]
+    ],
+    "end_time": "18:17:26",
+    "total_duration_seconds": 76.57
 }
