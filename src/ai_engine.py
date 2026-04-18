@@ -1,68 +1,55 @@
-import os
-# Force PyTorch to avoid searching for GPUs/Metal and keep it on CPU
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
-
-import time
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
-class FocusNet(nn.Module):
+class NeuroStressModel(nn.Module):
+    """The PyTorch Brain: Shared feature extractor with two prediction heads."""
     def __init__(self):
-        super(FocusNet, self).__init__()
-        # Inputs: [HR, EEG_Alpha, EEG_Beta, EEG_Theta, Center_Streak, Wander_Streak]
-        self.fc1 = nn.Linear(6, 16)
-        self.fc2 = nn.Linear(16, 8)
-        
-        # Head 1: State Classifier (Flow, Focused, Distracted, Drowsy)
-        self.classifier = nn.Linear(8, 4)
-        
-        # Head 2: Fatigue Projection (0.0 to 1.0)
-        self.projector = nn.Linear(8, 1)
+        super(NeuroStressModel, self).__init__()
+        self.shared = nn.Sequential(
+            nn.Linear(8, 64),
+            nn.ReLU(),
+            nn.Linear(64, 32),
+            nn.ReLU()
+        )
+        self.stress_head = nn.Sequential(
+            nn.Linear(32, 16), nn.ReLU(), nn.Linear(16, 1), nn.Sigmoid() 
+        )
+        self.state_head = nn.Sequential(
+            nn.Linear(32, 16), nn.ReLU(), nn.Linear(16, 3) 
+        )
 
     def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        
-        state_logits = self.classifier(x)
-        fatigue_score = torch.sigmoid(self.projector(x))
-        
-        return state_logits, fatigue_score
+        features = self.shared(x)
+        return self.stress_head(features), self.state_head(features)
 
 class AIEngine:
-    def __init__(self):
-        self.model = FocusNet()
-        self.model.eval() 
-        self.states = ["Flow", "Focused", "Distracted", "Drowsy"]
-        self.start_time = time.time() # Track how long the session has lasted
+    def __init__(self, model_path="neuro_stress_model.pth"):
+        self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+        self.model = NeuroStressModel().to(self.device)
+        self.state_labels = ["Flow", "Focused", "Distracted"]
+        
+        try:
+            self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+            self.model.eval()
+            print(f"🧠 AI Engine: Weights loaded successfully on {self.device}")
+        except Exception as e:
+            print(f"⚠️ AI Engine: No weights found. Using raw brain. Error: {e}")
 
-    def predict(self, hr, eeg, c_streak, w_streak):
-        # 1. Calculate Session Duration (Mental Fatigue increases over time)
-        session_minutes = (time.time() - self.start_time) / 60
-        time_factor = min(0.4, session_minutes / 60) # Adds up to 0.4 to fatigue over an hour
-
-        # 2. Prepare the tensor
-        val_hr = float(hr) if isinstance(hr, (int, float)) else 70.0
-        input_tensor = torch.tensor([[
-            (val_hr - 70) / 20.0, 
-            eeg['alpha'], eeg['beta'], eeg['theta'],
-            c_streak / 50.0, 
-            w_streak / 20.0
-        ]], dtype=torch.float32)
+    def get_prediction(self, hr, hrv, eeg, c_streak, w_streak, current_mode):
+        """Processes raw data and returns (stress_float, state_string)."""
+        val_hr = (float(hr) - 70) / 20.0
+        val_hrv = (float(hrv) - 50) / 20.0
+        s_enc = 1.0 if current_mode in ["Focused", "Flow"] else 0.2
+        
+        input_vec = torch.tensor([[
+            val_hr, val_hrv, 
+            eeg.get('alpha', 0.5), eeg.get('beta', 0.5), eeg.get('theta', 0.5),
+            c_streak / 50.0, w_streak / 20.0, s_enc
+        ]], dtype=torch.float32).to(self.device)
 
         with torch.no_grad():
-            logits, fatigue = self.model(input_tensor)
+            stress_tensor, state_logits = self.model(input_vec)
+            stress_val = stress_tensor.item()
+            state_idx = torch.argmax(state_logits, dim=1).item()
             
-        # 3. COMBINE AI + REAL-TIME DRIFT
-        # We take the AI's base guess and add the time_factor + HR volatility
-        hr_volatility = abs(val_hr - 75) / 50
-        combined_fatigue = torch.clamp(fatigue + time_factor + hr_volatility, 0, 1).item()
-
-        state_idx = torch.argmax(logits, dim=1).item()
-        
-        # If HR is very high or streaks are low, force the state toward 'Distracted'
-        if hr_volatility > 0.3 and state_idx == 0: # If AI says Flow but HR is racing
-            state_idx = 1 # Downgrade to Focused
-
-        return self.states[state_idx], combined_fatigue
+        return stress_val, self.state_labels[state_idx]

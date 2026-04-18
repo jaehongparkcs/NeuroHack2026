@@ -4,3 +4,5 @@ __pycache__
 venv/
 env/
 .DS_Store
+unified_training_data.csv
+*.csv
