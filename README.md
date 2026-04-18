@@ -1,13 +1,13 @@
 # FocusTrackStress
 
-An AI-powered productivity system that uses real-time rPPG (webcam-based heart rate), eye-tracking, and neural stress prediction to modulate your environment via Apple Music.
+An AI-powered productivity system that uses real-time rPPG (webcam-based heart rate), eye-tracking, and neural EEG wave prediction to predict current stress levels and  modulate your environment via Apple Music.
+
+Note: Needs Apple Music and must run on MacOS
 
 ## 🚀 Getting Started
 
 Follow these steps to set up your environment and run the application.
-
-### 1. Create a Virtual Environment
-It is highly recommended to use a virtual environment to avoid version conflicts with other Python projects.
+Note: It is highly recommended to use a virtual environment to avoid version conflicts with other Python projects.
 
 ```bash
 # Navigate to the project folder
