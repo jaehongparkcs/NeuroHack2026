@@ -124,24 +124,29 @@ class FocusTrackStress:
                     self.wander_s = max(0, self.wander_s - 3)
 
            # --- SENSOR FUSION & AI ---
-            # 1. Calculate Attention FIRST using the last known HRV
+            
+            # 1. Use the current HR/HRV from the bio object for the attention score
+            # We use self.bio.current_hrv directly to ensure we have the latest background update
             attention_score = BiometricClassifier.calculate_attention_score(
                 self.center_s, self.wander_s, self.bio.current_hrv
             )
             
-            # 2. Pass the Attention Score to generate the continuous EEG
+            # 2. Process frame (Extracts forehead color & generates EEG)
+            # 'res' is the annotated frame with the [rPPG LOCK] box drawn on it
             hr, hrv, eeg, calibrated = self.bio.process_frame(frame, self.mode, attention_score)
             
             # 3. Predict the Base Mode
             vector = [self.center_s, self.wander_s, self.blink_s, self.miss_s, hr]
             base_mode = BiometricClassifier.predict_state(vector)
             
-            # 4. Neural Network predicts pure stress
-            stress_level = self.ai_engine.predict_stress(hr, hrv, eeg, self.center_s, self.wander_s, base_mode)
-
+            # 4. Neural Network Predicts Stress
+            # IMPORTANT: We only let the AI predict if we have real calibrated HR data
             if calibrated:
+                stress_level = self.ai_engine.predict_stress(hr, hrv, eeg, self.center_s, self.wander_s, base_mode)
                 self.history_stress.append(stress_level)
                 self.history_states.append(base_mode)
+            else:
+                stress_level = 0.5  # Default neutral stress during calibration
             
             # --- THE FLOW GATEKEEPER ---
             if base_mode == "Focused":
