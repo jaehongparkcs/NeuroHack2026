@@ -70,7 +70,7 @@ class FocusTrackStress:
         # Give a smart recommendation
         print("\n💡 INSIGHT:")
         if avg_stress > 60 and dist_pct > 30:
-            print("   High stress and high distraction detected. You are experiencing cognitive overload. Take a 10-minute break.")
+            print("   High stress and high distraction detected. You are experiencing cognitive overload.")
         elif flow_pct > 50:
             print("   Excellent session! You achieved highly sustained Flow states.")
         else:
