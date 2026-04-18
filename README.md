@@ -11,7 +11,7 @@ Note: It is highly recommended to use a virtual environment to avoid version con
 
 ```bash
 # Navigate to the project folder
-cd FocusTrackStress
+cd NeuroHack2026
 
 # Create the environment
 python3.11 -m venv venv
